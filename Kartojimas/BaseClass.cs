@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Kartojimas
 {
-    abstract class BaseClass
+    public abstract class BaseClass
     {
         protected BaseClass(string name)
         {
