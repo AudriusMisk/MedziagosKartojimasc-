@@ -12,21 +12,23 @@ namespace Kartojimas
         }
         public override string NameMetodas()
         {
+            var sb = new StringBuilder();
             var balses = "a,e,i,u,y,o".ToList();
             foreach (var raide in Name)
             {
-                if (balses.Contains(raide))
-                { 
-                    
-                }
-
+                var kodas = balses.Contains(raide) ? ((int)raide).ToString() : raide.ToString() ;
+                sb.Append(kodas);
             }
-            return Name;
+            return sb.ToString();
         }
-        public override int NameKodas(int kodas)
+        public override int NameKodas(int a)
         {
-            Console.WriteLine($"{Name.Length} {kodas}");
-            return kodas;
+            int suma = 0;
+            foreach (var raide in Name)
+            {
+                suma += (int)raide * a;
+            }
+            return suma;
         }
     }
 
