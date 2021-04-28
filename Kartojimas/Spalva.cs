@@ -30,9 +30,10 @@ namespace Kartojimas
             Green = green;
             Blue = blue;
         }
-        public void GrayscaleValue()
+        public decimal GrayscaleValue()
         {
             decimal average = (decimal)((Red + Green + Blue) / 3);
+            return average;
         }
 
     }

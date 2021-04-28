@@ -4,30 +4,25 @@ using System.Text;
 
 namespace Kartojimas
 {
-    public class Kamuolys
+    public abstract class Zaislas
     {
-        public Kamuolys(int dydis, int metimuSkaicius, Spalva kamuolioSpalva)
+        protected Zaislas(int dydis, Spalva kamuolioSpalva, int metimuSkaicius)
         {
             Dydis = dydis;
             MetimuSkaicius = metimuSkaicius;
             KamuolioSpalva = kamuolioSpalva;
         }
 
-
-        public int Dydis { get; private set; }
+        public int Dydis { get;  set; }
         public int MetimuSkaicius { get; private set; }
 
         public Spalva KamuolioSpalva { get; set; }
 
-        public void Mesti()
-        {
-            MetimuSkaicius ++ ;
-        }
-
-        public void Susprogdinti()
+        public virtual void Susprogdinti()
         {
             Dydis = 0;
         }
+        public abstract void Mesti();
 
     }
 }
