@@ -4,16 +4,24 @@ using System.Text;
 
 namespace Kartojimas
 {
-    public class Kamuolys : Spalva
+    public class Kamuolys
     {
+        public Kamuolys(Spalva kamuolioSpalva)
+        {
+            KamuolioSpalva = kamuolioSpalva;
+        }
+
         public Kamuolys(int dydis, int metimuSkaicius)
         {
             Dydis = dydis;
             MetimuSkaicius = metimuSkaicius;
         }
 
+
         public int Dydis { get; private set; }
         public int MetimuSkaicius { get; private set; }
+
+        public Spalva KamuolioSpalva { get; set; }
 
         public void Mesti()
         {
