@@ -11,10 +11,15 @@ namespace Kartojimas
             Red = red;
             Green = green;
             Blue = blue;
-            SpalvosInfo = 255;
         }
 
-        public byte SpalvosInfo { get; set; }
+        public Spalva()
+        {
+            Red = 255;
+            Green = 255;
+            Blue = 255;
+        }
+
         public byte Red { get; set; }
         public byte Green { get; set; }
         public byte Blue { get; set; }
@@ -24,8 +29,8 @@ namespace Kartojimas
         
         }
         public void GrayscaleValue()
-        { 
-        
+        {
+            decimal average = (decimal)((Red + Green + Blue) / 3);
         }
 
     }
