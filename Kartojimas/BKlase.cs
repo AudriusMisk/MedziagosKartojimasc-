@@ -1,18 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Kartojimas
 {
     public class BKlase: BaseClass, IZodisKitaip
     {
+        private readonly List<char> balses = "a,e,i,u,y,o".ToList();
         public BKlase(string name) : base(name)
         {
         }
 
-        public override int NameKodas(int name)
+        public override int NameKodas(int a)
         {
-            throw new NotImplementedException();
+            int suma = 0;
+            foreach (var raide in Name)
+            {
+                suma += (int)raide - a;
+            }
+            return suma;
         }
 
         public override string NameMetodas()
@@ -22,17 +29,17 @@ namespace Kartojimas
 
         public string ZodisBeBalsiu()
         {
-            throw new NotImplementedException();
+            return Name.Where(r => !balses.Contains(r)).ToString();            
         }
 
         public string ZodisBePriebalsiu()
         {
-            throw new NotImplementedException();
+            return Name.Where(r => balses.Contains(r)).ToString();
         }
 
         public string ZodisSuPakeistomisBalsemis(char a)
         {
-            throw new NotImplementedException();
+            return Name.Where(r => balses.Contains(r)).ToString();
         }
 
         public string ZodisSuPakeistomisPriebalsemis(int b)
