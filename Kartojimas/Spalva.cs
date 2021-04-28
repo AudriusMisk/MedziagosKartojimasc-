@@ -20,13 +20,15 @@ namespace Kartojimas
             Blue = 255;
         }
 
-        public byte Red { get; set; }
-        public byte Green { get; set; }
-        public byte Blue { get; set; }
+        public byte Red { get; private set; }
+        public byte Green { get; private set; }
+        public byte Blue { get; private set; }
 
-        public void SpalvosKodoKeitimas()
-        { 
-        
+        public void SpalvosKodoKeitimas(byte red, byte green, byte blue)
+        {
+            Red = red;
+            Green = green;
+            Blue = blue;
         }
         public void GrayscaleValue()
         {
