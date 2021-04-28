@@ -13,7 +13,7 @@ namespace Kartojimas
         }
 
         public int Dydis { get; private set; }
-        public int MetimuSkaicius { get; set; }
+        public int MetimuSkaicius { get; private set; }
 
         public void Mesti()
         {
@@ -22,7 +22,7 @@ namespace Kartojimas
 
         public void Susprogdinti()
         {
-            Dydis++ ;
+            Dydis = 0;
         }
 
     }
